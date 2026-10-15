@@ -1,0 +1,2270 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#00585D">
+  <meta name="description"
+    content="تميز الأركان — حلول متخصصة في إدارة ونقل النفايات والخدمات البيئية في المملكة العربية السعودية.">
+  <title>تميز الأركان | Tamayoz Alarkan</title>
+  <link rel="icon" href="./icons/fav-icon.svg">
+
+  <style>
+    @font-face {
+      font-family: "Cairo";
+      src: url("./Fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf") format("truetype");
+      font-weight: 100 900;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Jakarta";
+      src: url(./Fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf);
+      font-weight: 100 900;
+      font-display: swap;
+    }
+
+    :root {
+      --primary: #00585D;
+      --primary-dark: #003F43;
+      --primary-deep: #002E31;
+      --accent: #00A8AF;
+      --accent-light: #DFF5F4;
+      --text: #172B2D;
+      --muted: #647678;
+      --background: #F2F9F9;
+      --white: #FFFFFF;
+      --border: #DCE9E9;
+      --shadow: 0 12px 35px rgba(0, 63, 67, .08);
+      --shadow-hover: 0 20px 45px rgba(0, 63, 67, .14);
+      --radius: 18px;
+      --transition: .3s ease;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 105px;
+    }
+
+    body {
+      font-family: "Cairo", Tahoma, Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    body,
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-alt {
+      background: var(--background);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 12px;
+      color: var(--accent);
+      font-size: .86rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 25px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 10px;
+    }
+
+    .section-heading h2 {
+      color: var(--primary-dark);
+      font-size: clamp(1.8rem, 3vw, 2.65rem);
+      line-height: 1.35;
+      margin-bottom: 15px;
+      font-weight: 850;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      min-height: 49px;
+      padding: 11px 25px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      font-size: .94rem;
+      font-weight: 750;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--accent);
+      box-shadow: 0 8px 22px rgba(0, 168, 175, .19);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(0, 88, 93, .2);
+    }
+
+    .btn-outline {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, .45);
+      background: rgba(255, 255, 255, .06);
+    }
+
+    .btn-outline:hover {
+      color: var(--primary-dark);
+      background: var(--white);
+    }
+
+    /* Navigation */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, .94);
+      border-bottom: 1px solid rgba(220, 233, 233, .8);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .navbar {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 26px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      display: block;
+      width: 158px;
+      max-height: 62px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(15px, 2vw, 29px);
+      list-style: none;
+    }
+
+    .nav-links a {
+      position: relative;
+      display: inline-block;
+      padding: 10px 0;
+      color: #415657;
+      font-size: .88rem;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: 3px;
+      inset-inline-start: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .nav-actions .btn {
+      min-height: 42px;
+      padding: 8px 16px;
+      font-size: .83rem;
+    }
+
+    .lang-btn {
+      color: var(--primary);
+      border: 1px solid var(--border);
+      background: var(--white);
+      border-radius: 9px;
+      padding: 8px 13px;
+      min-height: 42px;
+      cursor: pointer;
+      font-weight: 800;
+      transition: var(--transition);
+    }
+
+    .lang-btn:hover {
+      border-color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    .menu-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 43px;
+      height: 43px;
+      color: var(--primary);
+      background: var(--background);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      cursor: pointer;
+      font-size: 1.35rem;
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 650px;
+      min-height: min(760px, calc(100svh - 86px));
+      overflow: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(ellipse at 82% 22%, rgba(0, 168, 175, .23), transparent 38%),
+        radial-gradient(ellipse at 8% 100%, rgba(0, 168, 175, .15), transparent 35%),
+        linear-gradient(125deg, #00383C 0%, #00585D 53%, #00767A 100%);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      border: 1px solid rgba(255, 255, 255, .09);
+      border-radius: 50%;
+    }
+
+    .hero::before {
+      width: 560px;
+      height: 560px;
+      top: -250px;
+      inset-inline-end: -100px;
+    }
+
+    .hero::after {
+      width: 400px;
+      height: 400px;
+      top: -170px;
+      inset-inline-end: -20px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 850px;
+      padding-block: 100px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 15px;
+      margin-bottom: 25px;
+      color: #D9FFFF;
+      border: 1px solid rgba(255, 255, 255, .2);
+      background: rgba(255, 255, 255, .08);
+      border-radius: 50px;
+      font-size: .86rem;
+      font-weight: 700;
+    }
+
+    /* .hero-tag span {
+      width: 8px;
+      height: 8px;
+      background: #6EE7D8;
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(110, 231, 216, .8);
+    } */
+
+    .hero h1 {
+      max-width: 850px;
+      font-size: clamp(2.35rem, 5vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.28;
+      letter-spacing: -.025em;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 .highlight {
+      color: #76E0DB;
+    }
+
+    .hero-description {
+      max-width: 720px;
+      color: rgba(255, 255, 255, .82);
+      font-size: clamp(1rem, 1.4vw, 1.16rem);
+      margin-bottom: 34px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .hero-buttons .btn-primary {
+      color: var(--primary-dark);
+      background: #8AE5DF;
+      box-shadow: none;
+    }
+
+    .hero-buttons .btn-primary:hover {
+      background: var(--white);
+    }
+
+    .hero-bottom {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      inset-inline: 0;
+      height: 5px;
+      background: linear-gradient(90deg, transparent, var(--accent), #8AE5DF, transparent);
+      opacity: .8;
+    }
+
+    /* Values */
+
+    .values-strip {
+      position: relative;
+      z-index: 2;
+      background: var(--white);
+      box-shadow: 0 10px 30px rgba(0, 63, 67, .055);
+    }
+
+    .values-row {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      padding-block: 28px;
+    }
+
+    .value-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border-inline-start: 1px solid var(--border);
+    }
+
+    .value-item:first-child {
+      border-inline-start: 0;
+    }
+
+    .value-icon {
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      width: 43px;
+      height: 43px;
+      padding: 9px;
+      background: var(--accent-light);
+      border-radius: 12px;
+    }
+
+    .value-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .value-item p {
+      color: var(--primary-dark);
+      font-weight: 800;
+      font-size: .9rem;
+    }
+
+    /* Vision */
+
+    .vision-panel {
+      position: relative;
+      padding: 45px;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .vision-panel::before {
+      content: "";
+      position: absolute;
+      inset-block: 0;
+      inset-inline-start: 0;
+      width: 5px;
+      background: linear-gradient(var(--accent), var(--primary));
+    }
+
+    .vision-panel p {
+      max-width: 900px;
+      margin-inline: auto;
+      color: #42595B;
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      font-weight: 650;
+      line-height: 2;
+      text-align: center;
+    }
+
+    /* Saudi image cards */
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .story-card {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      min-height: 330px;
+      overflow: hidden;
+      isolation: isolate;
+      background: var(--primary-dark);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .story-card::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0, 35, 37, .94), rgba(0, 35, 37, .07) 100%);
+      transition: var(--transition);
+    }
+
+    .story-card:hover::before {
+      background: linear-gradient(0deg, rgba(0, 35, 37, .97), rgba(0, 35, 37, .18) 100%);
+    }
+
+    .story-card img.story-bg {
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .65s ease;
+    }
+
+    .story-card:hover img.story-bg {
+      transform: scale(1.045);
+    }
+
+    .story-content {
+      width: 100%;
+      padding: 28px;
+      color: var(--white);
+    }
+
+    .story-content h3 {
+      font-size: clamp(1.15rem, 2vw, 1.55rem);
+      line-height: 1.5;
+      margin-bottom: 10px;
+      font-weight: 850;
+    }
+
+    .story-content p {
+      color: rgba(255, 255, 255, .82);
+      font-size: .93rem;
+    }
+
+    /* Saudi Card - Full Width + Smooth Glow */
+
+    .story-grid>.saudi-card {
+      grid-column: 1 / -1;
+      width: 100%;
+      min-width: 0;
+      animation: saudiGlow 3s ease-in-out infinite;
+      transition: box-shadow 0.3s ease;
+      display: flex;
+      justify-content: center;
+      border-radius: 16px;
+    }
+
+    .story-grid>.saudi-card img {
+      width: min(250px, 75%);
+      max-height: 200px;
+      object-fit: contain;
+    }
+
+    @keyframes saudiGlow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 6px rgba(0, 168, 175, 0.12),
+          0 0 12px rgba(0, 168, 175, 0.06);
+      }
+
+      50% {
+        box-shadow: 0 0 14px rgba(0, 168, 175, 0.35),
+          0 0 28px rgba(0, 168, 175, 0.16);
+      }
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      align-items: stretch;
+      gap: 45px;
+    }
+
+    .about-aside {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 390px;
+      padding: 35px;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 85% 15%, rgba(0, 168, 175, .35), transparent 35%),
+        linear-gradient(145deg, var(--primary-dark), var(--primary));
+      border-radius: var(--radius);
+    }
+
+    .about-aside::after {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      top: -95px;
+      inset-inline-end: -80px;
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 50%;
+      box-shadow: 0 0 0 30px rgba(255, 255, 255, .025),
+        0 0 0 60px rgba(255, 255, 255, .02);
+    }
+
+    .about-aside h3 {
+      position: relative;
+      z-index: 1;
+      font-size: clamp(1.45rem, 2.5vw, 2rem);
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .about-aside p {
+      position: relative;
+      z-index: 1;
+      color: rgba(255, 255, 255, .78);
+    }
+
+    .about-copy {
+      display: grid;
+      gap: 16px;
+      align-content: center;
+    }
+
+    .about-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 21px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: var(--transition);
+    }
+
+    .about-point:hover {
+      transform: translateY(-3px);
+      border-color: #A7D9D6;
+      box-shadow: var(--shadow);
+    }
+
+    .point-number {
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      color: var(--primary);
+      background: var(--accent-light);
+      border-radius: 11px;
+      font-size: .92rem;
+      font-weight: 900;
+    }
+
+    .about-point p {
+      color: #536769;
+      font-size: .98rem;
+    }
+
+    /* Services */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 5px 20px rgba(0, 63, 67, .035);
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow-hover);
+      border-color: #B3DEDC;
+    }
+
+    .service-image {
+      height: 215px;
+      overflow: hidden;
+      background: #DDEDEC;
+    }
+
+    .service-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .55s ease;
+    }
+
+    .service-card:hover .service-image img {
+      transform: scale(1.045);
+    }
+
+    .service-body {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex: 1;
+      padding: 25px;
+    }
+
+    .service-label {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 4px 11px;
+      color: var(--primary);
+      background: var(--accent-light);
+      border-radius: 30px;
+      font-size: .75rem;
+      font-weight: 850;
+    }
+
+    .service-body h3 {
+      color: var(--primary-dark);
+      font-size: 1.25rem;
+      line-height: 1.5;
+      margin-bottom: 17px;
+    }
+
+    .service-body ul {
+      display: grid;
+      gap: 10px;
+      width: 100%;
+      padding-top: 17px;
+      border-top: 1px solid var(--border);
+      list-style: none;
+    }
+
+    .service-body li {
+      position: relative;
+      padding-inline-start: 22px;
+      color: var(--muted);
+      font-size: .91rem;
+    }
+
+    .service-body li::before {
+      content: "";
+      position: absolute;
+      top: .72em;
+      inset-inline-start: 2px;
+      width: 7px;
+      height: 7px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .section-cta {
+      margin-top: 36px;
+      text-align: center;
+    }
+
+    /* Clients marquee */
+
+    .clients-window {
+      position: relative;
+      overflow: hidden;
+      padding: 8px 0 24px;
+      direction: ltr;
+      mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+    }
+
+    .clients-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 42s linear infinite;
+    }
+
+    .clients-window:hover .clients-track {
+      animation-play-state: paused;
+    }
+
+    .clients-group {
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      gap: 20px;
+      padding-inline-end: 20px;
+    }
+
+    .client-logo {
+      display: grid;
+      place-items: center;
+      width: 155px;
+      height: 105px;
+      padding: 17px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      transition: var(--transition);
+    }
+
+    .client-logo:hover {
+      border-color: #A7D9D6;
+      box-shadow: var(--shadow);
+    }
+
+    .client-logo img {
+      display: block;
+      max-width: 100%;
+      max-height: 68px;
+      object-fit: contain;
+      filter: grayscale(100%);
+      opacity: .76;
+      transition: var(--transition);
+    }
+
+    .client-logo:hover img {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Why us */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .why-card {
+      padding: 27px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      transition: var(--transition);
+    }
+
+    .why-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: #A7D9D6;
+    }
+
+    .why-icon {
+      display: grid;
+      place-items: center;
+      width: 47px;
+      height: 47px;
+      margin-bottom: 17px;
+      color: var(--primary);
+      background: var(--accent-light);
+      border-radius: 13px;
+      font-size: 1.25rem;
+      font-weight: 900;
+    }
+
+    .why-card h3 {
+      color: var(--primary-dark);
+      font-size: 1.12rem;
+      margin-bottom: 9px;
+    }
+
+    .why-card p {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    /* Industries */
+
+    .industry-intro {
+      max-width: 790px;
+      margin: -18px auto 35px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .industry-item {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-height: 82px;
+      padding: 17px 19px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      transition: var(--transition);
+    }
+
+    .industry-item:hover {
+      border-color: #A7D9D6;
+      box-shadow: 0 7px 20px rgba(0, 63, 67, .055);
+    }
+
+    .industry-dot {
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      width: 31px;
+      height: 31px;
+      color: var(--primary);
+      background: var(--accent-light);
+      border-radius: 9px;
+      font-size: .85rem;
+      font-weight: 900;
+    }
+
+    .industry-item p {
+      color: #3E5557;
+      font-size: .92rem;
+      font-weight: 700;
+    }
+
+    /* Coverage */
+
+    .coverage {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+      padding: 42px;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .coverage-copy h2 {
+      color: var(--primary-dark);
+      font-size: clamp(1.65rem, 2.5vw, 2.25rem);
+      line-height: 1.45;
+      margin-bottom: 18px;
+    }
+
+    .coverage-copy p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .coverage-image {
+      display: grid;
+      place-items: center;
+      min-height: 250px;
+      padding: 15px;
+      border-radius: 14px;
+    }
+
+    .coverage-image img {
+      width: 100%;
+      max-height: 350px;
+      object-fit: contain;
+    }
+
+    /* Footer */
+
+    .site-footer {
+      color: rgba(255, 255, 255, .78);
+      background:
+        radial-gradient(ellipse at 80% 0%, rgba(0, 168, 175, .16), transparent 35%),
+        var(--primary-deep);
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 50px;
+      padding-block: 65px 45px;
+    }
+
+    .footer-brand img {
+      width: 175px;
+      max-height: 75px;
+      object-fit: contain;
+      margin-bottom: 18px;
+      filter: brightness(0) invert(1);
+    }
+
+    .footer-brand p {
+      max-width: 340px;
+      color: rgba(255, 255, 255, .65);
+      font-size: .9rem;
+    }
+
+    .footer-column h3 {
+      color: var(--white);
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+    }
+
+    .footer-list {
+      display: grid;
+      gap: 13px;
+      list-style: none;
+    }
+
+    .footer-list a,
+    .footer-list li {
+      color: rgba(255, 255, 255, .72);
+      font-size: .9rem;
+      overflow-wrap: anywhere;
+      transition: var(--transition);
+    }
+
+    .footer-list a:hover {
+      color: #8AE5DF;
+    }
+
+    .contact-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .contact-symbol {
+      flex-shrink: 0;
+      color: #8AE5DF;
+      font-weight: 900;
+    }
+
+    .phone-list {
+      display: grid;
+      gap: 4px;
+      direction: ltr;
+      text-align: start;
+    }
+
+    html[dir="rtl"] .phone-list {
+      text-align: right;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding-block: 22px;
+      border-top: 1px solid rgba(255, 255, 255, .13);
+      font-size: .82rem;
+      color: rgba(255, 255, 255, .55);
+    }
+
+    .footer-credit {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .footer-credit a {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .footer-credit img {
+      width: 80px;
+      max-height: 28px;
+      object-fit: contain;
+    }
+
+    /* Language switching */
+
+    [data-lang="en"] .ar {
+      display: none !important;
+    }
+
+    [data-lang="ar"] .en {
+      display: none !important;
+    }
+
+    /* English Font */
+    html[data-lang="en"] body {
+      font-family: "Jakarta", sans-serif !important;
+      direction: ltr;
+      text-align: left;
+    }
+
+    /* Arabic Font */
+    html[data-lang="ar"] body {
+      font-family: "Cairo", sans-serif !important;
+      direction: rtl;
+      text-align: right;
+    }
+
+    html[data-lang="en"] .hero-content {
+      text-align: left;
+    }
+
+    html[data-lang="en"] .hero-tag {
+      direction: ltr;
+    }
+
+    html[data-lang="en"] .section-heading,
+    html[data-lang="en"] .vision-panel p,
+    html[data-lang="en"] .industry-intro {
+      text-align: center;
+    }
+
+    html[data-lang="en"] .industry-item {
+      text-align: left;
+    }
+
+    html[data-lang="en"] .service-body li {
+      padding-left: 22px;
+      padding-right: 0;
+    }
+
+    html[data-lang="en"] .service-body li::before {
+      left: 2px;
+      right: auto;
+    }
+
+    html[data-lang="en"] .footer-list {
+      text-align: left;
+    }
+
+    /* English */
+    html[data-lang="en"] body {
+      font-family: 'Jakarta', sans-serif;
+      direction: ltr;
+      text-align: left;
+    }
+
+    /* Arabic */
+    html[data-lang="ar"] body {
+      font-family: 'Cairo', sans-serif;
+      direction: rtl;
+      text-align: right;
+    }
+
+
+    /* Saudi Image - Full Width + Smooth Glow */
+    .image-grid .saudi {
+      grid-column: 1 / -1 !important;
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+      justify-self: stretch;
+      animation: saudiGlow 3s ease-in-out infinite;
+    }
+
+    .image-grid .saudi img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: inherit;
+    }
+
+    /* Smooth online-light effect */
+    @keyframes saudiGlow {
+
+      0%,
+      100% {
+        box-shadow:
+          0 0 6px rgba(0, 168, 175, 0.15),
+          0 0 12px rgba(0, 168, 175, 0.08);
+      }
+
+      50% {
+        box-shadow:
+          0 0 14px rgba(0, 168, 175, 0.45),
+          0 0 28px rgba(0, 168, 175, 0.22);
+      }
+    }
+
+    /* Respect reduced-motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      .image-grid .saudi {
+        animation: none;
+      }
+    }
+
+    /* Responsive */
+
+    @media (max-width: 1080px) {
+      .navbar {
+        gap: 16px;
+      }
+
+      .brand img {
+        width: 135px;
+      }
+
+      .nav-links {
+        gap: 15px;
+      }
+
+      .nav-links a {
+        font-size: .82rem;
+      }
+
+      .nav-actions .btn {
+        padding-inline: 12px;
+      }
+
+      .services-grid {
+        gap: 17px;
+      }
+
+      .service-body {
+        padding: 21px;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .section {
+        padding: 75px 0;
+      }
+
+      .navbar {
+        min-height: 75px;
+      }
+
+      .brand img {
+        width: 140px;
+      }
+
+      .menu-btn {
+        display: inline-flex;
+      }
+
+      .nav-actions {
+        margin-inline-start: auto;
+      }
+
+      .nav-actions .contact-nav {
+        display: none;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 1px);
+        inset-inline: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 3px;
+        padding: 15px 24px 22px;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 16px 25px rgba(0, 63, 67, .09);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 10px 0;
+        font-size: .96rem;
+      }
+
+      .nav-links a::after {
+        display: none;
+      }
+
+      .hero {
+        min-height: 600px;
+      }
+
+      .hero-content {
+        padding-block: 80px;
+      }
+
+      .values-row {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px 0;
+      }
+
+      .value-item {
+        border-inline-start: 0;
+      }
+
+      .value-item:nth-child(3n + 2),
+      .value-item:nth-child(3n + 3) {
+        border-inline-start: 1px solid var(--border);
+      }
+
+      .story-card {
+        min-height: 290px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .about-aside {
+        min-height: 260px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .industry-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .coverage {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 30px;
+      }
+
+      .coverage-image {
+        min-height: 200px;
+      }
+
+      .footer-main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .container {
+        width: calc(100% - 32px);
+      }
+
+      .section {
+        padding: 58px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 30px;
+      }
+
+      .section-heading h2 {
+        font-size: 1.8rem;
+      }
+
+      .navbar {
+        min-height: 69px;
+        gap: 9px;
+      }
+
+      .brand img {
+        width: 118px;
+        max-height: 48px;
+      }
+
+      .nav-actions {
+        gap: 6px;
+      }
+
+      .lang-btn {
+        min-height: 39px;
+        padding: 6px 10px;
+        font-size: .82rem;
+      }
+
+      .menu-btn {
+        width: 39px;
+        height: 39px;
+      }
+
+      .hero {
+        min-height: 570px;
+        min-height: 72svh;
+      }
+
+      .hero-content {
+        padding-block: 65px;
+      }
+
+      .hero-tag {
+        font-size: .75rem;
+        margin-bottom: 20px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+        line-height: 1.4;
+      }
+
+      .hero-description {
+        font-size: .96rem;
+        line-height: 1.9;
+        margin-bottom: 25px;
+      }
+
+      .hero-buttons {
+        gap: 10px;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .values-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding-block: 17px;
+      }
+
+      .value-item {
+        justify-content: flex-start;
+        padding: 9px 6px;
+      }
+
+      .value-item:nth-child(n) {
+        border-inline-start: 0;
+      }
+
+      .value-item:nth-child(even) {
+        border-inline-start: 1px solid var(--border);
+      }
+
+      .value-icon {
+        width: 36px;
+        height: 36px;
+        padding: 7px;
+      }
+
+      .value-item p {
+        font-size: .8rem;
+      }
+
+      .vision-panel {
+        padding: 28px 23px;
+      }
+
+      .vision-panel p {
+        font-size: 1rem;
+        line-height: 2;
+      }
+
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .story-card {
+        min-height: 300px;
+      }
+
+      .story-content {
+        padding: 22px;
+      }
+
+      .saudi-card {
+        min-height: 190px;
+      }
+
+      .saudi-card img {
+        max-height: 145px;
+      }
+
+      .about-aside {
+        min-height: 235px;
+        padding: 25px;
+      }
+
+      .about-point {
+        padding: 16px;
+        gap: 11px;
+      }
+
+      .point-number {
+        width: 34px;
+        height: 34px;
+      }
+
+      .services-grid,
+      .why-grid,
+      .industry-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-image {
+        height: 205px;
+      }
+
+      .service-body {
+        padding: 22px;
+      }
+
+      .client-logo {
+        width: 125px;
+        height: 88px;
+        padding: 13px;
+      }
+
+      .client-logo img {
+        max-height: 58px;
+      }
+
+      .coverage {
+        padding: 23px 19px;
+      }
+
+      .coverage-image {
+        min-height: 160px;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-block: 45px 32px;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding-block: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="#home" class="brand" aria-label="Tamayoz Alarkan">
+        <img src="./icons/logo.svg" alt="تميز الأركان - Tamayoz Alarkan">
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home" class="active">
+          <span class="ar">الرئيسية</span><span class="en">Home</span>
+        </a>
+        <a href="#vision">
+          <span class="ar">رؤيتنا</span><span class="en">Our Vision</span>
+        </a>
+        <a href="#about">
+          <span class="ar">من نحن</span><span class="en">About Us</span>
+        </a>
+        <a href="#services">
+          <span class="ar">خدماتنا</span><span class="en">Our Services</span>
+        </a>
+        <a href="#why-us">
+          <span class="ar">لماذا نحن</span><span class="en">Why Us</span>
+        </a>
+        <a href="#clients">
+          <span class="ar">عملاؤنا</span><span class="en">Our Clients</span>
+        </a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-primary contact-nav">
+          <span class="ar">تواصل معنا</span><span class="en">Contact Us</span>
+        </a>
+        <button class="lang-btn" id="langToggle" type="button" aria-label="Switch language">English</button>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="فتح القائمة" aria-expanded="false"
+          aria-controls="navLinks">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <span></span>
+            <span class="ar">حلول بيئية متخصصة في المملكة العربية السعودية</span>
+            <span class="en">Specialized Environmental Solutions in Saudi Arabia</span>
+          </div>
+
+          <h1 class="ar">
+            حلول موثوقة لإدارة ونقل النفايات
+            <span class="highlight">بأعلى معايير السلامة</span>
+          </h1>
+          <h1 class="en">
+            Reliable Waste Management
+            <span class="highlight">With the Highest Safety Standards</span>
+          </h1>
+
+          <p class="hero-description ar">
+            نقدم خدمات متخصصة في نقل وإدارة النفايات الخطرة وفق أعلى معايير السلامة والالتزام البيئي.
+          </p>
+          <p class="hero-description en">
+            We provide specialized hazardous waste transportation and management services in accordance with the highest
+            safety standards and environmental regulations.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">
+              <span class="ar">ابدأ التواصل معنا ←</span>
+              <span class="en">Get in Touch →</span>
+            </a>
+            <a href="#services" class="btn btn-outline">
+              <span class="ar">اكتشف خدماتنا</span>
+              <span class="en">Explore Our Services</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bottom"></div>
+    </section>
+
+    <!-- Values -->
+    <div class="values-strip">
+      <div class="container values-row">
+        <div class="value-item">
+          <div class="value-icon"><img src="./icons/customer.svg" alt=""></div>
+          <p><span class="ar">خدمة العملاء</span><span class="en">Customer Service</span></p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon"><img src="./icons/correct.svg" alt=""></div>
+          <p><span class="ar">التميز</span><span class="en">Excellence</span></p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon"><img src="./icons/plants.svg" alt=""></div>
+          <p><span class="ar">الاستدامة</span><span class="en">Sustainability</span></p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon"><img src="./icons/lamb.svg" alt=""></div>
+          <p><span class="ar">الابتكار</span><span class="en">Innovation</span></p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon"><img src="./icons/stars.svg" alt=""></div>
+          <p><span class="ar">الإتقان</span><span class="en">Precision</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vision -->
+    <section class="section" id="vision">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">
+            <span class="ar">طموحنا للمستقبل</span>
+            <span class="en">Our Future Ambition</span>
+          </span>
+          <h2><span class="ar">رؤيتنا</span><span class="en">Our Vision</span></h2>
+        </div>
+
+        <div class="vision-panel">
+          <p class="ar">
+            الوصول إلى الريادة في تقديم خدمات الإدارة البيئية في المملكة العربية السعودية من خلال الإدارة الفعالة.
+          </p>
+          <p class="en">
+            To become a leader in environmental management services across the Kingdom of Saudi Arabia through effective
+            management.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Saudi sustainability stories -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">
+            <span class="ar">نحو مستقبل مستدام</span>
+            <span class="en">Towards a Sustainable Future</span>
+          </span>
+          <h2>
+            <span class="ar">حلول بيئية تدعم طموحات المملكة</span>
+            <span class="en">Environmental Solutions for the Kingdom</span>
+          </h2>
+        </div>
+
+        <div class="story-grid">
+          <article class="story-card">
+            <img class="story-bg" src="./images/flag.jpg" alt="" loading="lazy">
+            <div class="story-content">
+              <h3>
+                <span class="ar">نساهم في بناء مستقبل أكثر استدامة للمملكة</span>
+                <span class="en">Contributing to a More Sustainable Future for the Kingdom</span>
+              </h3>
+              <p>
+                <span class="ar">من خلال حلول بيئية متكاملة تساعد المنشآت على تحقيق الاستدامة والالتزام بالمعايير
+                  البيئية، بما يدعم طموحات المملكة نحو مستقبل أكثر استدامة.</span>
+                <span class="en">Through integrated environmental solutions that help organizations achieve
+                  sustainability and comply with environmental standards, supporting the Kingdom's ambitions for a more
+                  sustainable future.</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="story-card">
+            <img class="story-bg" src="./images/riadh.jpg" alt="" loading="lazy">
+            <div class="story-content">
+              <h3>
+                <span class="ar">حلول بيئية تدعم رؤية السعودية 2030</span>
+                <span class="en">Environmental Solutions Supporting Saudi Vision 2030</span>
+              </h3>
+              <p>
+                <span class="ar">نقدم خدمات وحلولًا بيئية متكاملة تعزز الاستدامة وتحمي الموارد الطبيعية وتحسن جودة
+                  الحياة في مختلف أنحاء المملكة.</span>
+                <span class="en">We provide integrated environmental services and solutions that promote sustainability,
+                  protect natural resources, and improve the quality of life across the Kingdom.</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="story-card">
+            <img class="story-bg" src="./images/neom.jpg" alt="" loading="lazy">
+            <div class="story-content">
+              <h3>
+                <span class="ar">ندعم المشاريع السعودية بحلول بيئية مسؤولة ومستدامة</span>
+                <span class="en">Supporting Saudi Projects with Responsible and Sustainable Environmental
+                  Solutions</span>
+              </h3>
+              <p>
+                <span class="ar">نقدم خدمات بيئية متخصصة تساعد المشاريع على تحقيق التوازن بين النمو والتطوير وحماية
+                  البيئة، مع تحسين كفاءة استخدام الموارد ودعم مستقبل أكثر استدامة.</span>
+                <span class="en">We provide specialized environmental services that help projects balance growth,
+                  development, and environmental protection, improving resource efficiency and supporting a more
+                  sustainable future.</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="story-card">
+            <img class="story-bg" src="./images/lights.jpg" alt="" loading="lazy">
+            <div class="story-content">
+              <h3>
+                <span class="ar">بيئة مستدامة.. مستقبل مزدهر</span>
+                <span class="en">A Sustainable Environment. A Prosperous Future.</span>
+              </h3>
+              <p>
+                <span class="ar">نلتزم بتقديم حلول بيئية مبتكرة تعزز الاستدامة وتحافظ على الموارد وتدعم مسيرة التنمية
+                  نحو مستقبل أكثر ازدهارًا.</span>
+                <span class="en">We are committed to providing innovative environmental solutions that promote
+                  sustainability, preserve resources, and support development toward a more prosperous future.</span>
+              </p>
+            </div>
+          </article>
+
+          <div class="saudi-card">
+            <img src="./images/saudi.png" alt="المملكة العربية السعودية - Saudi Arabia" loading="lazy">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">
+            <span class="ar">تعرف علينا</span>
+            <span class="en">Get to Know Us</span>
+          </span>
+          <h2><span class="ar">من نحن</span><span class="en">About Us</span></h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-aside">
+            <h3>
+              <span class="ar">تميز الأركان.. خبرة والتزام في الخدمات البيئية</span>
+              <span class="en">Tamayoz Alarkan — Experience and Commitment in Environmental Services</span>
+            </h3>
+            <p>
+              <span class="ar">نعمل بعقلية الشريك، مع التركيز على احتياجات العميل وجودة التنفيذ والالتزام بالمتطلبات
+                البيئية.</span>
+              <span class="en">We work as a partner, focusing on client needs, quality execution, and environmental
+                requirements.</span>
+            </p>
+          </div>
+
+          <div class="about-copy">
+            <div class="about-point">
+              <span class="point-number">01</span>
+              <p class="ar">لدى تميز الأركان فريق عمل وإدارة ذو خبرات عالية، مكون من مهندسين وفنيين وعمالة وسائقين في
+                المجال البيئي.</p>
+              <p class="en">Tamayoz Alarkan has a highly experienced management and work team consisting of engineers,
+                technicians, workers, and drivers specializing in the environmental field.</p>
+            </div>
+
+            <div class="about-point">
+              <span class="point-number">02</span>
+              <p class="ar">منظومة متكاملة تعمل على جمع ونقل النفايات الصناعية والكيميائية الخطرة بأنواعها.</p>
+              <p class="en">An integrated operation specializing in the collection and transportation of various types
+                of industrial and hazardous chemical waste.</p>
+            </div>
+
+            <div class="about-point">
+              <span class="point-number">03</span>
+              <p class="ar">نعمل بعقلية الشريك: نفهم تحديات العميل، ونحدد نطاق العمل المناسب، وننفذ الخدمة بانضباط من
+                لحظة التنسيق حتى إتمام المهمة.</p>
+              <p class="en">We work as a partner: we understand our clients' challenges, define the appropriate scope of
+                work, and deliver services with discipline from initial coordination through task completion.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section section-alt" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">
+            <span class="ar">ما نقدمه</span>
+            <span class="en">What We Do</span>
+          </span>
+          <h2><span class="ar">خدماتنا</span><span class="en">Our Services</span></h2>
+          <p>
+            <span class="ar">خدمات متخصصة تلبي احتياجات المنشآت وفق متطلبات العمل والمعايير البيئية.</span>
+            <span class="en">Specialized services tailored to facility needs and environmental requirements.</span>
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-image">
+              <img src="./images/water-truck.jpeg" alt="خدمات سحب وتوريد المياه" loading="lazy">
+            </div>
+            <div class="service-body">
+              <span class="service-label">
+                <span class="ar">الخدمة 01</span><span class="en">Service 01</span>
+              </span>
+              <h3>
+                <span class="ar">سحب وتوريد المياه</span>
+                <span class="en">Water Pumping and Supply</span>
+              </h3>
+              <ul>
+                <li><span class="ar">سحب مياه الصرف الصحي</span><span class="en">Sewage water removal</span></li>
+                <li><span class="ar">توريد مياه صالحة للاستخدام</span><span class="en">Supply of water suitable for
+                    use</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-image">
+              <img src="./images/permisson.jpg" alt="خدمات التصاريح البيئية" loading="lazy">
+            </div>
+            <div class="service-body">
+              <span class="service-label">
+                <span class="ar">الخدمة 02</span><span class="en">Service 02</span>
+              </span>
+              <h3>
+                <span class="ar">التصاريح البيئية</span>
+                <span class="en">Environmental Permits</span>
+              </h3>
+              <ul>
+                <li><span class="ar">استخراج التصاريح البيئية</span><span class="en">Obtaining environmental
+                    permits</span></li>
+                <li><span class="ar">عقود الصرف الصحي</span><span class="en">Sewage service contracts</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-image">
+              <img src="./images/factory.jpg" alt="نقل النفايات الخطرة" loading="lazy">
+            </div>
+            <div class="service-body">
+              <span class="service-label">
+                <span class="ar">الخدمة 03</span><span class="en">Service 03</span>
+              </span>
+              <h3>
+                <span class="ar">نقل النفايات الخطرة</span>
+                <span class="en">Hazardous Waste Transportation</span>
+              </h3>
+              <ul>
+                <li><span class="ar">جمع ونقل النفايات الكيميائية</span><span class="en">Collection and transportation
+                    of chemical waste</span></li>
+                <li><span class="ar">جمع ونقل الحمأة السائلة والصلبة</span><span class="en">Collection and
+                    transportation of liquid and solid sludge</span></li>
+                <li><span class="ar">جمع ونقل الزيوت والشحوم ومخلفات المنشآت الصغيرة</span><span class="en">Collection
+                    and transportation of oils, grease, and waste from small facilities</span></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-cta">
+          <a href="#contact" class="btn btn-primary">
+            <span class="ar">تواصل معنا بشأن خدماتنا</span>
+            <span class="en">Contact Us About Our Services</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clients -->
+    <section class="section" id="clients">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">
+            <span class="ar">شركاء النجاح</span>
+            <span class="en">Our Partners</span>
+          </span>
+          <h2><span class="ar">عملاؤنا</span><span class="en">Our Clients</span></h2>
+        </div>
+      </div>
+
+      <div class="clients-window">
+        <div class="clients-track" id="clientsTrack">
+          <div class="clients-group">
+            <div class="client-logo"><img src="./clients/1.png" alt="Client 1" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/2.png" alt="Client 2" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/3.png" alt="Client 3" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/4.png" alt="Client 4" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/5.png" alt="Client 5" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/6.png" alt="Client 6" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/7.png" alt="Client 7" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/8.png" alt="Client 8" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/9.png" alt="Client 9" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/10.png" alt="Client 10" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/11.png" alt="Client 11" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/12.png" alt="Client 12" loading="lazy"></div>
+          </div>
+          <div class="clients-group" aria-hidden="true">
+            <div class="client-logo"><img src="./clients/1.png" alt="" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/2.png" alt="" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/3.png" alt="" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/4.png" alt="" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/5.png" alt="" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/6.png" alt="" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/7.png" alt="" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/8.png" alt="" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/9.png" alt="" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/10.png" alt="" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/11.png" alt="" loading="lazy"></div>
+            <div class="client-logo"><img src="./clients/12.png" alt="" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="section section-alt" id="why-us">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">
+            <span class="ar">ما يميزنا</span>
+            <span class="en">Our Strengths</span>
+          </span>
+          <h2><span class="ar">لماذا تختار تميز الأركان؟</span><span class="en">Why Choose Tamayoz Alarkan?</span></h2>
+        </div>
+
+        <div class="why-grid">
+          <article class="why-card">
+            <div class="why-icon">01</div>
+            <h3><span class="ar">فريق مختص</span><span class="en">Specialized Team</span></h3>
+            <p><span class="ar">كوادر مؤهلة بخبرة عملية في مختلف أنواع النفايات.</span><span class="en">Qualified
+                professionals with practical experience in various types of waste.</span></p>
+          </article>
+
+          <article class="why-card">
+            <div class="why-icon">02</div>
+            <h3><span class="ar">الالتزام البيئي</span><span class="en">Environmental Compliance</span></h3>
+            <p><span class="ar">تنفيذ متوافق مع الاشتراطات واللوائح ذات العلاقة.</span><span class="en">Services
+                delivered in accordance with relevant requirements and regulations.</span></p>
+          </article>
+
+          <article class="why-card">
+            <div class="why-icon">03</div>
+            <h3><span class="ar">السلامة أولًا</span><span class="en">Safety First</span></h3>
+            <p><span class="ar">إجراءات تشغيل دقيقة تقلل المخاطر وتحمي الجميع.</span><span class="en">Precise operating
+                procedures that reduce risks and protect everyone.</span></p>
+          </article>
+
+          <article class="why-card">
+            <div class="why-icon">04</div>
+            <h3><span class="ar">حلول مخصصة</span><span class="en">Customized Solutions</span></h3>
+            <p><span class="ar">نصمم نطاق العمل بما يناسب احتياج كل منشأة.</span><span class="en">We tailor the scope of
+                work to meet the needs of each facility.</span></p>
+          </article>
+
+          <article class="why-card">
+            <div class="why-icon">05</div>
+            <h3><span class="ar">توثيق واضح</span><span class="en">Clear Documentation</span></h3>
+            <p><span class="ar">شفافية كاملة في كل مرحلة من مراحل الخدمة.</span><span class="en">Complete transparency
+                at every stage of the service.</span></p>
+          </article>
+
+          <article class="why-card">
+            <div class="why-icon">06</div>
+            <h3><span class="ar">سرعة الاستجابة</span><span class="en">Quick Response</span></h3>
+            <p><span class="ar">تنسيق مرن وخدمة موثوقة تناسب جدول أعمالك.</span><span class="en">Flexible coordination
+                and reliable service that fit your schedule.</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industries -->
+    <section class="section" id="industries">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">
+            <span class="ar">القطاعات التي نخدمها</span>
+            <span class="en">Industries We Serve</span>
+          </span>
+          <h2><span class="ar">خبراتنا تشمل قطاعات متعددة</span><span class="en">Serving a Range of Industries</span>
+          </h2>
+        </div>
+
+        <p class="industry-intro">
+          <span class="ar">نقدم حلولًا متخصصة في إدارة ونقل النفايات والخدمات التشغيلية والبيئية لعدد من القطاعات
+            الحيوية، منها:</span>
+          <span class="en">We provide specialized waste management, transportation, operational, and environmental
+            solutions for several vital sectors, including:</span>
+        </p>
+
+        <div class="industry-grid">
+          <div class="industry-item"><span class="industry-dot">✓</span>
+            <p><span class="ar">مصانع الأغذية والمشروبات</span><span class="en">Food and beverage factories</span></p>
+          </div>
+          <div class="industry-item"><span class="industry-dot">✓</span>
+            <p><span class="ar">المسالخ ومزارع الدواجن</span><span class="en">Slaughterhouses and poultry farms</span>
+            </p>
+          </div>
+          <div class="industry-item"><span class="industry-dot">✓</span>
+            <p><span class="ar">المصانع والمنشآت الكيميائية</span><span class="en">Chemical factories and
+                facilities</span></p>
+          </div>
+          <div class="industry-item"><span class="industry-dot">✓</span>
+            <p><span class="ar">مصانع ومحطات النفط والبتروكيماويات</span><span class="en">Oil, petroleum, and
+                petrochemical plants and stations</span></p>
+          </div>
+          <div class="industry-item"><span class="industry-dot">✓</span>
+            <p><span class="ar">منشآت توليد الطاقة والكهرباء</span><span class="en">Power generation and electricity
+                facilities</span></p>
+          </div>
+          <div class="industry-item"><span class="industry-dot">✓</span>
+            <p><span class="ar">الموانئ والمناطق اللوجستية</span><span class="en">Ports and logistics zones</span></p>
+          </div>
+          <div class="industry-item"><span class="industry-dot">✓</span>
+            <p><span class="ar">المنشآت الصناعية والتجارية</span><span class="en">Industrial and commercial
+                facilities</span></p>
+          </div>
+          <div class="industry-item"><span class="industry-dot">✓</span>
+            <p><span class="ar">مشاريع البنية التحتية وشبكات الصرف الصحي</span><span class="en">Infrastructure projects
+                and sewage networks</span></p>
+          </div>
+          <div class="industry-item"><span class="industry-dot">✓</span>
+            <p><span class="ar">الفنادق والمطاعم الكبيرة</span><span class="en">Hotels and large restaurants</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coverage -->
+    <section class="section section-alt" id="coverage">
+      <div class="container">
+        <div class="coverage">
+          <div class="coverage-copy">
+            <span class="eyebrow">
+              <span class="ar">نطاق خدماتنا</span>
+              <span class="en">Our Service Coverage</span>
+            </span>
+            <h2><span class="ar">خدمات بيئية متكاملة في جميع مناطق المملكة</span><span class="en">Integrated
+                Environmental Services Across the Kingdom</span></h2>
+            <p>
+              <span class="ar">تقدم تميز الأركان خدمات متكاملة في جمع وإدارة النفايات الخطرة في جميع مناطق المملكة
+                العربية السعودية.</span>
+              <span class="en">Tamayoz Alarkan provides integrated hazardous waste collection and management services
+                across all regions of the Kingdom of Saudi Arabia.</span>
+            </p>
+            <a href="#contact" class="btn btn-primary">
+              <span class="ar">تواصل معنا</span><span class="en">Contact Us</span>
+            </a>
+          </div>
+          <div class="coverage-image">
+            <img src="./images/Map.png" alt="خريطة المملكة العربية السعودية - Saudi Arabia map" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-main">
+      <div class="footer-brand">
+        <a href="#home">
+          <img src="./icons/logo.svg" alt="تميز الأركان - Tamayoz Alarkan">
+        </a>
+        <p>
+          <span class="ar">حلول موثوقة لإدارة ونقل النفايات، مع الالتزام بمعايير السلامة والمتطلبات البيئية في المملكة
+            العربية السعودية.</span>
+          <span class="en">Reliable waste management and transportation solutions, aligned with safety standards and
+            environmental requirements in Saudi Arabia.</span>
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3><span class="ar">تواصل معنا</span><span class="en">Contact Us</span></h3>
+        <ul class="footer-list">
+          <li class="contact-line">
+            <span class="contact-symbol">⌖</span>
+            <span><span class="ar">مكة المكرمة، المملكة العربية السعودية</span><span class="en">Makkah, Kingdom of Saudi
+                Arabia</span></span>
+          </li>
+          <li class="contact-line">
+            <span class="contact-symbol">@</span>
+            <a href="mailto:tamayozalarkan@gmail.com">tamayozalarkan@gmail.com</a>
+          </li>
+          <li class="contact-line">
+            <span class="contact-symbol">☎</span>
+            <div class="phone-list">
+              <a href="tel:0555535294">0555535294</a>
+              <a href="tel:0500351040">0500351040</a>
+              <a href="tel:0560005046">0560005046</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3><span class="ar">روابط سريعة</span><span class="en">Quick Links</span></h3>
+        <ul class="footer-list">
+          <li><a href="#about"><span class="ar">من نحن</span><span class="en">About Us</span></a></li>
+          <li><a href="#services"><span class="ar">خدماتنا</span><span class="en">Our Services</span></a></li>
+          <li><a href="#why-us"><span class="ar">لماذا نحن</span><span class="en">Why Choose Us</span></a></li>
+          <li><a href="#industries"><span class="ar">القطاعات التي نخدمها</span><span class="en">Industries We
+                Serve</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="currentYear">2026</span> <span class="ar">تميز الأركان. جميع الحقوق محفوظة.</span><span
+          class="en">Tamayoz Alarkan. All rights reserved.</span></p>
+      <div class="footer-credit">
+        <span><span class="ar">تصميم وتطوير</span><span class="en">Designed by</span></span>
+        <a href="https://comet-hub-lac.vercel.app/" target="_blank" rel="noopener noreferrer"
+          aria-label="Comet Creative House">
+          <img src="./icons/comet-logo.svg" alt="Comet">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const langToggle = document.getElementById("langToggle");
+      const menuBtn = document.getElementById("menuBtn");
+      const navLinks = document.getElementById("navLinks");
+
+      function setLanguage(language) {
+        const lang = language === "en" ? "en" : "ar";
+
+        root.dataset.lang = lang;
+        root.lang = lang;
+        root.dir = lang === "ar" ? "rtl" : "ltr";
+
+        langToggle.textContent = lang === "ar" ? "English" : "العربية";
+        langToggle.setAttribute(
+          "aria-label",
+          lang === "ar" ? "Switch to English" : "التبديل إلى العربية"
+        );
+
+        menuBtn.setAttribute(
+          "aria-label",
+          lang === "ar" ? "فتح القائمة" : "Open navigation"
+        );
+
+        document.title = lang === "ar"
+          ? "تميز الأركان | حلول بيئية"
+          : "Tamayoz Alarkan | Environmental Solutions";
+
+        try {
+          localStorage.setItem("tamayoz-language", lang);
+        } catch (error) {
+          // The page still works when local storage is unavailable.
+        }
+
+        closeMenu();
+      }
+
+      function closeMenu() {
+        navLinks.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.textContent = "☰";
+      }
+
+      langToggle.addEventListener("click", () => {
+        setLanguage(root.dataset.lang === "ar" ? "en" : "ar");
+      });
+
+      menuBtn.addEventListener("click", () => {
+        const open = navLinks.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", String(open));
+        menuBtn.textContent = open ? "×" : "☰";
+      });
+
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          closeMenu();
+          navLinks.querySelectorAll("a").forEach((item) => item.classList.remove("active"));
+          link.classList.add("active");
+        });
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!navLinks.contains(event.target) &&
+          !menuBtn.contains(event.target) &&
+          navLinks.classList.contains("open")) {
+          closeMenu();
+        }
+      });
+
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+      try {
+        const savedLanguage = localStorage.getItem("tamayoz-language");
+        if (savedLanguage === "en" || savedLanguage === "ar") {
+          setLanguage(savedLanguage);
+        }
+      } catch (error) {
+        // Arabic is the default language.
+      }
+    })();
+  </script>
+</body>
+
+</html>
