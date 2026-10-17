@@ -9,6 +9,7 @@
     content="تميز الأركان — حلول متخصصة في إدارة ونقل النفايات والخدمات البيئية في المملكة العربية السعودية.">
   <title>تميز الأركان | Tamayoz Alarkan</title>
   <link rel="icon" href="./icons/fav-icon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
   <style>
     @font-face {
@@ -1210,6 +1211,40 @@ html[data-lang="ar"] body * {
       }
     }
 
+        /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 60px;
+      height: 60px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: #25D366;
+      color: #ffffff;
+      border-radius: 50%;
+
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+      z-index: 9999;
+
+      text-decoration: none;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .whatsapp-float svg {
+      width: 32px;
+      height: 32px;
+      display: block;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+    }
+
     /* Responsive */
 
     @media (max-width: 1080px) {
@@ -2159,16 +2194,22 @@ html[data-lang="ar"] body * {
         <h3><span class="ar">تواصل معنا</span><span class="en">Contact Us</span></h3>
         <ul class="footer-list">
           <li class="contact-line">
-            <span class="contact-symbol">⌖</span>
+            <span class="contact-symbol">
+              <i class="fa-solid fa-location-dot"></i>
+            </span>
             <span><span class="ar">مكة المكرمة، المملكة العربية السعودية</span><span class="en">Makkah, Kingdom of Saudi
                 Arabia</span></span>
           </li>
           <li class="contact-line">
-            <span class="contact-symbol">@</span>
+            <span class="contact-symbol">
+              <i class="fa-solid fa-envelope"></i>
+            </span>
             <a href="mailto:tamayozalarkan@gmail.com">tamayozalarkan@gmail.com</a>
           </li>
           <li class="contact-line">
-            <span class="contact-symbol">☎</span>
+            <span class="contact-symbol">
+              <i class="fa-solid fa-phone-flip"></i>
+            </span>
             <div class="phone-list">
               <a href="tel:0555535294">0555535294</a>
               <a href="tel:0500351040">0500351040</a>
